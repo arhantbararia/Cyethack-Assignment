@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    
+    {% if machines  %}
+
+
+    
+
+    <h2>Machines</h2>
+    <ul>
+        {% for machine in machines %}
+            <li><a href="{% url 'view-machine' machine.machine_ID %}">{{ machine.Host_Name }}</a></li>
+        {% empty %}
+            <li>No machines </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% else %}
+    <h1>You must be logged in to view this record </h1>
+
+{% endif %}
+
+{% endblock %}

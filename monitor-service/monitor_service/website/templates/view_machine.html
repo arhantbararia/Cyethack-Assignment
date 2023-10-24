@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    {% if machine %}
+        
+        machine_ID :   {{ machine.machine_ID }}<br/>   
+        Host_Name : {{ machine.Host_Name }}   <br/>
+        OS_Name : {{ machine.OS_Name }} <br/>  
+        OS_Version :{{ machine.OS_Version }} <br/>  
+        OS_Manufacturer :  {{ machine.OS_Manufacturer }} <br/>  
+        OS_Configuration = {{ machine.OS_Configuration }} <br/>  
+        Registered_Owner:  {{ machine.Registered_Owner }} <br/>  
+        System_Manufacturer:  {{ machine.System_Manufacturer }} <br/>  
+        System_Model:  {{ machine.System_Model }} <br/>  
+        System_Boot_Time :  {{ machine.System_Boot_Time }} <br/>  
+        Original_Install_Date:  {{ machine.Original_Install_Date }} <br/>  
+        BIOS_Version:  {{ machine.BIOS_Version }} <br/>  
+        Boot_Device:  {{ machine.Boot_Device }} <br/>  
+        System_Locale:  {{ machine.System_Locale }} <br/>  
+        Input_Locale:  {{ machine.Input_Locale }} <br/>  
+        Time_Zone:  {{ machine.Time_Zone }} <br/>  
+        Total_Physical_Memory :  {{ machine.Total_Physical_Memory }} <br/>  
+        Available_Physical_Memory :  {{ machine.Available_Physical_Memory }} <br/>  
+    {% endif %}
+
+
+    <h2>Installed Apps</h2>
+    <ul>
+        {% for app in installed_apps %}
+            <li>{{ app }}</li>
+        {% empty %}
+            <li>No installed apps.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Running Apps</h2>
+    <ul>
+        {% for app in running_apps %}
+            <li>{{ app }}</li>
+        {% empty %}
+            <li>No running apps.</li>
+        {% endfor %}
+    </ul>
+
+{% else %}
+    <h1>You must be logged in to view this record </h1>
+
+{% endif %}
+
+{% endblock %}
