@@ -123,11 +123,13 @@ def generate_Installed_apps_list(string):
     
 
     for line in lines[3:20]:
+        try:
+            app_name = line.split('.')[1]
+            app_name = ' '.join(app_name.split())
+            installed_apps.append(app_name)
+        except IndexError:
+            continue
         
-        app_name = line.split('.')[1]
-        app_name = ' '.join(app_name.split())
-        installed_apps.append(app_name)
-    
     return installed_apps
     
 
