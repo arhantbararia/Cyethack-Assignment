@@ -3,25 +3,57 @@
 {% block content %}
 {% if user.is_authenticated %}
     {% if machine %}
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scopt = "col" > Machine ID </th>
+            <th scope="col">HOST NAME</th>
+            <th scope="col">OS_Name</th>
+            <th scope="col">OS_Version</th>
+            <th scope="col">OS_Manufacturer</th>
+            <th scope="col">OS_Configuration</th>
+            <th scope="col">Registered_Owner:</th>
+            <th scope="col">System_Manufacturer</th>
+            <th scope="col">System_Model</th>
+            <th scope="col">System_Boot_Time</th>
+            <th scope="col">Original_Install_Date:</th>
+            <th scope="col">BIOS_Version</th>
+            <th scope="col">Boot_Device</th>
+            <th scope="col">System_Locale</th>
+            <th scope="col">Input_Locale</th>
+            <th scope="col">Time_Zone</th>
+            <th scope="col">Total_Physical_Memory </th>
+            <th scope="col">Available_Physical_Memory</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+              <tr>
+                <td> <a href="{% url 'view-machine' machine.machine_ID %}">{{ machine.machine_ID }}</a></td>
+                <td>{{ machine.Host_Name }}</td>
+                <td>{{ machine.OS_Name }} </td>  
+                <td>{{ machine.OS_Version }} </td>  
+                    <td>{{ machine.OS_Manufacturer }} </td> 
+                        <td>{{ machine.OS_Configuration }} </td> 
+                            <td>{{ machine.Registered_Owner }} </td>  
+                                <td>{{ machine.System_Manufacturer }}</td>  
+                                    <td>{{ machine.System_Model }} </td>   
+                                        <td>{{ machine.System_Boot_Time }} </td>  
+                                            <td>{{ machine.Original_Install_Date }} </td>  
+                                                <td> {{ machine.BIOS_Version }} </td>  
+                                                    <td>{{ machine.Boot_Device }} </td>   
+                                                        <td> {{ machine.System_Locale }} </td> 
+                                                            <td>{{ machine.Input_Locale }} </td>  
+                                                                <td>{{ machine.Time_Zone }} </td> 
+                                                                    <td>{{ machine.Total_Physical_Memory }} </td>   
+                                                                        <td>{{ machine.Available_Physical_Memory }} </td> 
+              
+        </tr>
+        </tbody>
+    </table>
         
-        machine_ID :   {{ machine.machine_ID }}<br/>   
-        Host_Name : {{ machine.Host_Name }}   <br/>
-        OS_Name : {{ machine.OS_Name }} <br/>  
-        OS_Version :{{ machine.OS_Version }} <br/>  
-        OS_Manufacturer :  {{ machine.OS_Manufacturer }} <br/>  
-        OS_Configuration = {{ machine.OS_Configuration }} <br/>  
-        Registered_Owner:  {{ machine.Registered_Owner }} <br/>  
-        System_Manufacturer:  {{ machine.System_Manufacturer }} <br/>  
-        System_Model:  {{ machine.System_Model }} <br/>  
-        System_Boot_Time :  {{ machine.System_Boot_Time }} <br/>  
-        Original_Install_Date:  {{ machine.Original_Install_Date }} <br/>  
-        BIOS_Version:  {{ machine.BIOS_Version }} <br/>  
-        Boot_Device:  {{ machine.Boot_Device }} <br/>  
-        System_Locale:  {{ machine.System_Locale }} <br/>  
-        Input_Locale:  {{ machine.Input_Locale }} <br/>  
-        Time_Zone:  {{ machine.Time_Zone }} <br/>  
-        Total_Physical_Memory :  {{ machine.Total_Physical_Memory }} <br/>  
-        Available_Physical_Memory :  {{ machine.Available_Physical_Memory }} <br/>  
+          
     {% endif %}
 
 
