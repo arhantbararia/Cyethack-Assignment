@@ -97,5 +97,23 @@ It asks for masters ip address and port it is listening on.
 ### Features
 
 - Multiple slaves can be connected simultaneously
+- Checks with the slave machines every 5 mins
+- Clean storage by automatically removing the data of the slave machine after it has closed the client.exe
 
 ### Examples
+
+- DashBoard
+- ![example 1](https://github.com/arhantbararia/Cyethack-Assignment/assets/61796574/38fd9f72-cf07-499f-9cfd-647a6b962937)
+
+- Output of server.py
+- ![example 2](https://github.com/arhantbararia/Cyethack-Assignment/assets/61796574/8075dfac-5762-48fd-a3b4-8593848809b3)
+
+- Output of running client.exe
+- ![example 3](https://github.com/arhantbararia/Cyethack-Assignment/assets/61796574/8ae5cdfd-c5a0-4bb5-a7f1-cd43d5d08e60)
+
+- Output when a machine (slave) disconnects
+- ![example 4](https://github.com/arhantbararia/Cyethack-Assignment/assets/61796574/f9644ca2-445f-4dc3-9bcc-61fc8d28525b)
+
+- Dashboard for a specific machine
+- ![example 5](https://github.com/arhantbararia/Cyethack-Assignment/assets/61796574/faacb7ff-74c1-419e-b8d0-d97ab23fd69f)
+
