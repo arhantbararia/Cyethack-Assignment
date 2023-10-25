@@ -1,6 +1,6 @@
 # Monitor Service
 
-Monitor service aims to provide a monitoring service to get the status of members of a cluster of computers. It uses socket communication to talk to Remote Server (Master). This also provides an interface to the administrator to view and manage the slave machines. Uses MySQL to store data.
+Monitor service aims to provide a monitoring service to get the status of members of a cluster of computers. It uses socket communication to talk to Remote Server (Master). This also provides an interface to the administrator to view and manage the slave machines. Uses MySQL to store data. Server uses multithreading to generate a new thread for each slave machine connected.
 
 This is a guide to show the process of installation and setting up and examples.
 
@@ -67,13 +67,19 @@ Password:
 Password (again):
 ```
 
-1. Before running the remote automatic website 
+10. Now run the django server.  
 
 ```python
 $python3 manage.py runserver 0.0.0.0:8000
 ```
 
-1. Now navigate to server folder and run  [server.py](http://server.py) 
+11. It is advised to run server using nohup that it doesn't get closed if you close the terminal.
+
+```python
+$ nohup python3 manage.py runserver 0.0.0.0:8000 &
+```
+
+12. Now navigate to server folder and run server.py
 
 ```python
 $pwd
@@ -84,8 +90,14 @@ $python server.py
 #port 8080
 #Server is listening for incoming connections.
 ```
+or Use same nohup command to run this file in background
+```
+$pwd
+#~/Cytehack-Assignement/server/
+$nohup python3 server.py &
+```
 
-1. If you navigate to Cyethack-Assignment/client/dist directory, you will find client.exe, which can be transferred to the client windows machine. This client needs to be run as administrator to work properly.
+13. If you navigate to Cyethack-Assignment/client/dist directory, you will find [client.exe](https://github.com/arhantbararia/Cyethack-Assignment/tree/master/client/dist), which can be transferred to the client windows machine. This client needs to be run as administrator to work properly.
 It asks for masters ip address and port it is listening on.
     
     ```python
